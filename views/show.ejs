@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.css">
+    <title>Fruits Show page</title>
+</head>
+    <body>
+        <h1>Fruits Show page</h1>
+        <!-- injecting data -->
+        <%= fruit.name %> is <%= fruit.color %>, 
+
+        <% if (fruit.readyToEat === true) { %>
+            It is ready to eat.
+        <% } else { %>
+            It is not ready to eat.
+        <% } %>
+    </body>
+</html>

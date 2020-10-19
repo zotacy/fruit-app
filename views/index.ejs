@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/app.css">
+        <title>Index</title>
+    </head>
+    <body>
+        <h1>Fruits index page</h1>
+        
+        <ul>
+            <% for (let i=0; i<fruits.length; i++) {%>
+            <li>
+                <a href="/fruits/<%=i%>"><%= fruits[i].name %></a>
+            </li>
+            <a href="/fruits/<%=i; %>/edit">Edit</a>
+            <form action="/fruits/<%=i; %>?_method=DELETE" method="POST">
+                <input type="submit" value="delete">
+            </form>
+            <br><br>
+            <% } %>
+        </ul>
+
+        <nav>
+            <a href="/fruits/new">Create a New Fruit</a>
+        </nav>
+    </body>
+</html>
+
+<!-- //utilize during project week
+<ul>
+    <% %>
+    <li>
+        <a></a>
+    </li>
+</ul> -->
