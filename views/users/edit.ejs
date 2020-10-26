@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Edit User Page</h1>
-        <form action="/users/<%=index%>?_method=PUT" method="POST">
+        <form action="/users/<%=users.id%>?_method=PUT" method="POST">
             Name: <input type="text" name="<%=user.name%>" /><br/>
             Username: <input type="text" name="<%=user.username%>" /><br/>
             Password: <input type="text" name="<%=user.password%>" /><br/>
