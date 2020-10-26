@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const users = require('../users.js');
+// const users = require('../users.js');
+const User = require('../models').User
 
 // Routes
 router.get("/", (req,res)=>{
     res.render("users/index.ejs") //Render automaticatilly calls on views
 });
+
 // SIGN-UP
 //GET ==> Sign-up Page
 router.get('/signup', (req,res)=>{

@@ -14,12 +14,14 @@
     <ul>
         <% for (let i=0; i<users.length; i++) {%>
         <li>
-            <a href="/users/<%=i%>"><%= users[i].name %></a>
+            <a href="/users/<%=users[i].id%>"><%= users[i].name %></a>
         </li>
-        <a href="/users/<%=i; %>/edit">Edit</a>
-        <form action="/users/<%=i; %>?_method=DELETE" method="POST">
-            <input type="submit" value="delete">
-        </form>
+        <!-- Add EDIT link here  -->
+        <a href="/users/<%=users[i].id;%>/edit">Edit</a>
+        <!--  ADD DELETE FORM HERE-->
+        <form action="/users/<%=users.id %>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE <%= user.name %>" />
+          </form>
         <br><br>
         <% } %>
     </ul>
