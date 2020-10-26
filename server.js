@@ -7,6 +7,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
 
 app.use("/fruits", require("./controllers/fruitsController.js"));
+app.use("/users", require("./controllers/usersController.js"));
 
 //LISTEN
 app.listen (3000, ()=>{
