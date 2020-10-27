@@ -7,10 +7,10 @@
     </head>
     <body>
         <h1>Edit User Page</h1>
-        <form action="/users/<%=users.id%>?_method=PUT" method="POST">
-            Name: <input type="text" name="<%=user.name%>" /><br/>
-            Username: <input type="text" name="<%=user.username%>" /><br/>
-            Password: <input type="text" name="<%=user.password%>" /><br/>
+        <form action="/users/<%=user.id%>?_method=PUT" method="POST">
+            Name: <input type="text" value="<%=user.id.name%>" /><br/>
+            Username: <input type="text" value="<%=user.id.username%>" /><br/>
+            Password: <input type="text" value="<%=user.id.password%>" /><br/>
             <input type="submit" name="" value="Submit Changes"/>
         </form>
     </body>

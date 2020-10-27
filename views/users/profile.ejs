@@ -8,10 +8,18 @@
 </head>
     <body>
         <h1> Welcome <%=user.name%></h1>
-        <form action="/users/<%=users.id%>?_method=PUT" method="POST">
+        <form action="/users/<%=user.id%>?_method=PUT" method="POST">
             Name: <input type="text" value="<%=user.name%>" /><br/>
             Username: <input type="text" value="<%=user.username%>" /><br/>
             Password: <input type="text" value="<%=user.password%>" /><br/>
         </form>
+        <br>
+        <!-- Add EDIT link here  -->
+        <a href="/users/<%=user.id%>/edit">Edit</a>
+        <!--  ADD DELETE FORM HERE-->
+        <form action="/users/<%=user.id %>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE"/>
+        </form>
+        <br><br>
     </body>
 </html>

@@ -5,24 +5,24 @@ const Fruit = require('../models').Fruit;
 
 //GET ==> this is our homepage database
 router.get("/", (req, res) => {
-    Fruit.findAll().then((fruits) => {
-      res.render("index.ejs", {
-        fruits: fruits,
-      });
+  Fruit.findAll().then((fruits) => {
+    res.render("index.ejs", {
+      fruits: fruits,
     });
   });
+});
 
 //GET ==> show form to user
 router.get('/new', (req,res)=>{
     res.render('new.ejs');
 })
-//GET ==> get single object
+//GET ==> get/show single object
 router.get("/:id", (req, res) => {
-    Fruit.findByPk(req.params.id).then((fruit) => {
-      res.render("show.ejs", {
-        fruit: fruit,
-      });
+  Fruit.findByPk(req.params.id).then((fruit) => {
+    res.render("show.ejs", {
+      fruit: fruit,
     });
+  });
 });
 
 //POST ==> Create a new fruit
@@ -50,7 +50,7 @@ router.get("/:id/edit", function (req, res) {
 
 //PUT ==> update the data in our model
 router.put("/:id", (req, res) => {
-    console.log("Calling put method")
+    // console.log("Calling put method")
     if (req.body.readyToEat === "on") {
       req.body.readyToEat = true;
     } else {
