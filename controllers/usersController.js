@@ -24,10 +24,16 @@ router.post('/', (req,res)=> {
     });
 });
 //GET ==> Profile
-router.get('/profile/:id', (req,res) => {
-    User.findByPk(req.params.id).then((userProfile) => { 
-        console.log(userProfile)
-        res.render('users/profile.ejs',{
+router.get("/profile/:id", (req, res) => {
+    User.findByPk(req.params.id,{
+        include:[
+            {
+                model: Fruit,
+                attributes: ["id", "name"]
+            }
+        ]
+    }).then((userProfile) => {
+        res.render("users/profile.ejs", {
             user: userProfile,
         });
     });

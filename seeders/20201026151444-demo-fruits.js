@@ -10,6 +10,7 @@ module.exports = {
           readyToEat: true,
           createdAt: new Date(),
           updatedAt: new Date(),
+          userId:1
         },
         {
           name: "pear",
@@ -17,6 +18,7 @@ module.exports = {
           readyToEat: false,
           createdAt: new Date(),
           updatedAt: new Date(),
+          userId:2
         },
         {
           name: "banana",
@@ -24,6 +26,7 @@ module.exports = {
           readyToEat: true,
           createdAt: new Date(),
           updatedAt: new Date(),
+          userId:3
         },
       ],
       {}

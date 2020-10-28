@@ -2,6 +2,7 @@ const express= require('express');
 const router = express.Router();
 // const fruits = require('../fruits.js')
 const Fruit = require('../models').Fruit;
+const User = require('../models').User;
 
 //GET ==> this is our homepage database
 router.get("/", (req, res) => {
@@ -18,10 +19,18 @@ router.get('/new', (req,res)=>{
 })
 //GET ==> get/show single object
 router.get("/:id", (req, res) => {
-  Fruit.findByPk(req.params.id).then((fruit) => {
-    res.render("show.ejs", {
-      fruit: fruit,
-    });
+  Fruit.findByPk(req.params.id, {
+      include : [{
+          model: User,
+          attributes: ['name']
+      }],
+      attributes: ['name', 'color', 'readyToEat']
+  })
+  .then(fruit => {
+      console.log(fruit)
+      res.render('show.ejs', {
+          fruit: fruit
+      });
   });
 });
 
