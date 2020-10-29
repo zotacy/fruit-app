@@ -18,7 +18,14 @@
         <% } %>
         <br/>
         Added by <%= fruit.User.name %>
-        <br/><br/>
+
+        <h3>Seasons: </h3>
+        <% for(let i=0; i<fruit.Seasons.length; i++) {%>
+            <li>
+                <%= fruit.Seasons[i].name %>
+            </li>
+        <% } %>
+        <br/>
 
         <form action="/fruits/<%=fruit.id %>?_method=DELETE" method="POST">
             <input type="submit" value="DELETE <%= fruit.name %>" />

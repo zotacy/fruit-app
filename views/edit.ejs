@@ -17,6 +17,13 @@
                 checked
                 <% } %>
             />
+            <br/>
+            <select name="season">
+                <% for (let i=0; i<seasons.length; i++) { let selected = ( i == 0
+                    ) ? "selected" : "";%>
+                <option value="<%=seasons[i].id%>" <%= selected %>> <%= seasons[i].name %> </option>
+                <% } %>
+            </select>
             <br/><br/>
             <input type="submit" name="" value="Submit Changes"/>
         </form>
