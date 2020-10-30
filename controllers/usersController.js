@@ -27,7 +27,7 @@ router.get("/profile/:id", (req, res) => {
   });
 
 //EDIT USER PROFILE
-router.put('/:id', (req, res) => { //:index is the index of our users array that we want to change
+router.put('/profile/:id', (req, res) => { //:index is the index of our users array that we want to change
 	User.update(req.body, { //in our users array, find the index that is specified in the url (:index).  Set that element to the value of req.body (the input data)
         where: {id: req.params.id},
         returning: true,
@@ -37,7 +37,7 @@ router.put('/:id', (req, res) => { //:index is the index of our users array that
 });
 
 //DELETE USER PROFILE
-router.delete('/:id', (req,res)=>{
+router.delete('/profile/:id', (req,res)=>{
     User.destroy({ where: {id: req.params.id} }).then(() => {
         console.log(req.params.id);
         res.redirect('/users')
@@ -46,9 +46,7 @@ router.delete('/:id', (req,res)=>{
 
 // GET ==> Fruits index Page
 router.get('/', (req,res)=>{
-    res.render('index.ejs', {
-        fruits: fruits
-    });
+    res.render('users/index.ejs')
 });
 
 // LISTEN
