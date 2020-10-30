@@ -27,7 +27,7 @@ app.use(methodOverride('_method'));
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
 
-app.use('/auth', require('./controllers/authCOntroller.js'));
+app.use('/auth', require('./controllers/authController.js'));
 app.use("/fruits", verifyToken, require("./controllers/fruitsController.js"));
 app.use("/users", verifyToken, require("./controllers/usersController.js"));
 
